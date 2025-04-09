@@ -20,6 +20,5 @@ docker run \
   --interactive \
   --volume $(readlink -f "${BUILD_ROOT}"):/buildroot:z \
   --workdir /buildroot \
-  --memory=30g --memory-swap=32g \
   ${BUILD_CONTAINER} \
   ${BUILD_COMMAND} "$@"
