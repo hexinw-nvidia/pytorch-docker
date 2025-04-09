@@ -1,2 +1,9 @@
-# build-pytorch
-Build PyTorch from source
+# pytorch-docker
+Docker build PyTorch from source
+
+### Build
+
+```
+./build.sh
+```
+
