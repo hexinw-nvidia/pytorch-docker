@@ -10,6 +10,7 @@ cd $(dirname $0)/..
 
 BUILD_ROOT=./
 BUILD_CONTAINER=nvidia/cuda:12.8.1-cudnn-devel-ubuntu22.04
+#BUILD_CONTAINER=nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
 BUILD_COMMAND=/buildroot/tools/docker-build-deb.sh
 
 #docker pull ${BUILD_CONTAINER}

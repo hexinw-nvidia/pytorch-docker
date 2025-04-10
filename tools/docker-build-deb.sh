@@ -3,14 +3,14 @@
 set -e
 set -x
 
-# Install PyTorch build dependencies.
-/buildroot/tools/setup-env.sh
-
 # Run the build with the same uid as the outside user so that
 # the build output has the same permission.
 extuid=$(stat -c %u /buildroot)
 extgid=$(stat -c %g /buildroot)
 if [ $(id -u) != "$extuid" ]; then
+  # Install PyTorch build dependencies.
+  /buildroot/tools/setup-env.sh
+
   groupadd build --gid $extgid || true
   useradd build --groups sudo \
     --home-dir /buildroot \
