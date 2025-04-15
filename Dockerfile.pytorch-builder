@@ -1,0 +1,6 @@
+FROM nvidia/cuda:12.8.1-cudnn-devel-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+COPY tools/setup-env.sh /tmp/setup-env.sh
+RUN /tmp/setup-env.sh
