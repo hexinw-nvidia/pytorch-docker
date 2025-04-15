@@ -8,8 +8,9 @@ set -x
 extuid=$(stat -c %u /buildroot)
 extgid=$(stat -c %g /buildroot)
 if [ $(id -u) != "$extuid" ]; then
-  # Install PyTorch build dependencies.
-  /buildroot/tools/setup-env.sh
+  # Uncomment the following to install PyTorch build dependencies if using
+  # nvidia cuda image as the builder image.
+  #/buildroot/tools/setup-env.sh
 
   groupadd build --gid $extgid || true
   useradd build --groups sudo \
